@@ -62,13 +62,13 @@ class HomeController extends Controller
     }
     public function setDashParam(Request $request){
         $request->session()->put('activeMen', false);
-        
+
     }
 
 
 //    App Pararams
     public function budMakes(){
-        return Inertia::render('BusMake');
+        return Inertia::render('Index');
     }
     public function busModels(){
         return Inertia::render('BusModel');

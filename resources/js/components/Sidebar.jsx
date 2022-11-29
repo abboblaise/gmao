@@ -3,7 +3,6 @@ import {SiShopware, MdOutlineCancel} from "react-icons/all";
 import {TooltipComponent} from "@syncfusion/ej2-react-popups";
 import {links} from '../data/dymmy1';
 import { Link, usePage } from "@inertiajs/inertia-react";
-import { Inertia } from '@inertiajs/inertia';
 
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -11,8 +10,8 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 const Sidebar = () => {
     const {activeMenu, setactiveMenu, screenSize, currentColor} = useStateContext()
-    const { url, component, props } = usePage()
-    
+    const { url } = usePage()
+
 
     const handleCloseSidebar = () => {
         if (activeMenu && screenSize <= 900) {
@@ -23,7 +22,7 @@ const Sidebar = () => {
     const activeLink ='flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2'
     const normalLink ='flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2'
     return (
-        <div className=" ml-3 h-screen  overflow-auto md:hover:overflow:auto pb-10">
+        <div className={`ml-3 h-screen  overflow-auto md:hover:overflow-auto pb-10`}>
             {activeMenu && (<>
                 <div className=" flex justify-between items-center">
                     <Link href={"/"} onClick={handleCloseSidebar}
@@ -31,7 +30,7 @@ const Sidebar = () => {
                         <SiShopware/> <span>GMAO</span>
                     </Link>
                     <TooltipComponent content="Menu" position="BottomCenter">
-                        <button type='button' onClick={() => setactiveMenu(!activeMenu)} 
+                        <button type='button' onClick={() => setactiveMenu(!activeMenu)}
                         className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
                             <MdOutlineCancel/>
                         </button>
@@ -44,7 +43,7 @@ const Sidebar = () => {
                             {item.title}
                             </p>
                             {item.links.map((link) => (
-                                <Link href={`/${link.name}`} key={link.name}
+                                <Link href={route(`dummy.${link.name}`)} key={link.name}
                                     onClick={handleCloseSidebar}
                                     style={{ backgroundColor: url === `/${link.name}` ? currentColor : '' }}
                                     className={url === `/${link.name}` ? activeLink : normalLink}

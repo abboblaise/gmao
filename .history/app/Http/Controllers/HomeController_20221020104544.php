@@ -72,7 +72,7 @@ class HomeController extends Controller
 
 //    App Pararams
     public function budMakes(){
-        return Inertia::render('BusMake');
+        return Inertia::render('Index');
     }
     public function busModels(){
         return Inertia::render('BusModel');

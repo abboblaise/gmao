@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BusMakeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomeController::class,"ecommerce"])->name("home.index");
 
 //Params
-Route::get('/bus-make', [\App\Http\Controllers\HomeController::class,"budMakes"])->name("make.index");
-Route::get('/bus-model', [\App\Http\Controllers\HomeController::class,"busModels"])->name("model.index");
+Route::resources([
+    'bus-make' => BusMakeController::class,
+]);
+//Route::get('/bus-make', [\App\Http\Controllers\BusMakeController::class,"index"])->name("make.index");
 Route::get('/bus', [\App\Http\Controllers\HomeController::class,"bus"])->name("bus.index");
 Route::get('/speciality', [\App\Http\Controllers\HomeController::class,"specialities"])->name("speciality.index");
 Route::get('/technician', [\App\Http\Controllers\HomeController::class,"technicians"])->name("technician.index");

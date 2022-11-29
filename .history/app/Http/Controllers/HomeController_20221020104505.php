@@ -66,13 +66,13 @@ class HomeController extends Controller
         Inertia::share(['dashParams' => function () use ($oldConfig) {
             return array_merge($oldConfig(), ['Activemenu' => false]);
         }]);
-        
+
     }
 
 
 //    App Pararams
     public function budMakes(){
-        return Inertia::render('BusMake');
+        return Inertia::render('Index');
     }
     public function busModels(){
         return Inertia::render('BusModel');

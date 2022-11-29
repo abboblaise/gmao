@@ -29,10 +29,13 @@
         "@inertiajs/inertia-react": "^0.8.1",
         "@inertiajs/progress": "^0.2.7",
         "@rollup/plugin-dynamic-import-vars": "^2.0.0",
+        "@syncfusion/ej2-react-layouts": "^20.3.48",
+        "m-react-splitters": "^1.2.0",
         "primeicons": "^6.0.1",
         "primereact": "^8.7.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-hook-form": "^7.39.1",
         "react-icons": "^4.4.0"
     }
 }

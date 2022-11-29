@@ -108,6 +108,13 @@
   dependencies:
     "@syncfusion/ej2-icons" "~19.4.52"
 
+"@syncfusion/ej2-base@~20.3.47", "@syncfusion/ej2-base@~20.3.48":
+  version "20.3.50"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-base/-/ej2-base-20.3.50.tgz#fc0154122cc9f80e45cf1f34e554d250246e713f"
+  integrity sha512-v6POMf2LwuRqo/ZSDON7WlHGIAs0BRaU7AM67IP4IdFr2J5MBwN2lFuw2zHaC7BH7h1AB8kBwRDoQEWuKitfRQ==
+  dependencies:
+    "@syncfusion/ej2-icons" "~20.3.47"
+
 "@syncfusion/ej2-buttons@~19.4.52", "@syncfusion/ej2-buttons@~19.4.53", "@syncfusion/ej2-buttons@~19.4.55":
   version "19.4.55"
   resolved "https://registry.npmjs.org/@syncfusion/ej2-buttons/-/ej2-buttons-19.4.55.tgz"
@@ -298,6 +305,11 @@
   resolved "https://registry.npmjs.org/@syncfusion/ej2-icons/-/ej2-icons-19.4.52.tgz"
   integrity sha512-hkEvuVA/soEdqFwFSGbj2Z9u6Ajb+4HZNYIKtw6aCwjn/FE5vFuGMFBdkLEX9BRkUl/e/uvyP6/TKBM/nfkY8A==
 
+"@syncfusion/ej2-icons@~20.3.47":
+  version "20.3.47"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-icons/-/ej2-icons-20.3.47.tgz#9223238cccfbeacdb914176e311a132660392e86"
+  integrity sha512-5uQEkkyene5mm/o1G7GMSJqmSrFOWFyuJdEIqzZYBzr+7hwlq6P919A/XR3eDBJSIz1wTN65bTQ9SCl4j/us1g==
+
 "@syncfusion/ej2-inplace-editor@~19.4.52":
   version "19.4.52"
   resolved "https://registry.npmjs.org/@syncfusion/ej2-inplace-editor/-/ej2-inplace-editor-19.4.52.tgz"
@@ -338,6 +350,13 @@
     "@syncfusion/ej2-layouts" "~19.4.52"
     "@syncfusion/ej2-navigations" "~19.4.52"
     "@syncfusion/ej2-popups" "~19.4.52"
+
+"@syncfusion/ej2-layouts@20.3.48":
+  version "20.3.48"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-layouts/-/ej2-layouts-20.3.48.tgz#f9270a3d074ebb522e6b7ef526afa19d34e6d332"
+  integrity sha512-utKuc8Gl8E9oMKkVTw1BsFRX9kbhDil/9E3LISz1b57P3AQLvKltkpfKCeo6YYFle7c4BPxhceoHZs7cGgDbXw==
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.48"
 
 "@syncfusion/ej2-layouts@~19.4.52":
   version "19.4.52"
@@ -497,6 +516,13 @@
   dependencies:
     "@syncfusion/ej2-base" "~19.4.52"
 
+"@syncfusion/ej2-react-base@~20.3.47":
+  version "20.3.47"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-react-base/-/ej2-react-base-20.3.47.tgz#b61a236f66c702cc88e6f752910a1f50c4c70974"
+  integrity sha512-x1FNcohhHNvUfvoDVP/jvwmXz65LHP3hKRQIwPxaPby5lM1OzHUecWuIT+6JTc4dat++14c35EAbC6sqr1PrhA==
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.47"
+
 "@syncfusion/ej2-react-calendars@^19.4.48":
   version "19.4.56"
   resolved "https://registry.npmjs.org/@syncfusion/ej2-react-calendars/-/ej2-react-calendars-19.4.56.tgz"
@@ -550,6 +576,15 @@
     "@syncfusion/ej2-base" "~19.4.52"
     "@syncfusion/ej2-kanban" "19.4.52"
     "@syncfusion/ej2-react-base" "~19.4.52"
+
+"@syncfusion/ej2-react-layouts@^20.3.48":
+  version "20.3.48"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-react-layouts/-/ej2-react-layouts-20.3.48.tgz#6ba08527da1b339047bdfb6192d8de93cd77759d"
+  integrity sha512-uue0Dda8+c1VRMTmxnVGyzVY4WePLe5tslXVVN3+UMmxho68SYSJDN9P0vQWC4DaKkqtoK8WkKvi/xX7X9YgxQ==
+  dependencies:
+    "@syncfusion/ej2-base" "~20.3.48"
+    "@syncfusion/ej2-layouts" "20.3.48"
+    "@syncfusion/ej2-react-base" "~20.3.47"
 
 "@syncfusion/ej2-react-popups@^19.4.52":
   version "19.4.53"
@@ -1216,6 +1251,14 @@ loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+m-react-splitters@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/m-react-splitters/-/m-react-splitters-1.2.0.tgz#75babeac9093ca63dd83c58bf5bdccfb88e6af5e"
+  integrity sha512-w6zftbSImtRH5NcbbZFNBnziTJC5iG3hDo5oF1GYRAnbYCsDCEMLCHeJZG3X/6Bhy6fz1RJ+sZcvMSmY5pZkqQ==
+  dependencies:
+    react "^16.4.2"
+    react-dom "^16.4.2"
+
 magic-string@^0.26.4:
   version "0.26.7"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.26.7.tgz#caf7daf61b34e9982f8228c4527474dac8981d6f"
@@ -1405,6 +1448,16 @@ quick-lru@^5.1.1:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+react-dom@^16.4.2:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
+  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.19.1"
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
@@ -1412,6 +1465,11 @@ react-dom@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-hook-form@^7.39.1:
+  version "7.39.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.39.1.tgz#ded87d4b3f6692d1f9219515f78ca282b6e1ebf7"
+  integrity sha512-MiF9PCILN5KulhSGbnjohMiTOrB47GerDTichMNP0y2cPUu1GTRFqbunOxCE9N1499YTLMV/ne4gFzqCp1rxrQ==
 
 react-icons@^4.4.0:
   version "4.4.0"
@@ -1431,6 +1489,15 @@ react-transition-group@^4.4.1:
     "@babel/runtime" "^7.5.5"
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+
+react@^16.4.2:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
+  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
     prop-types "^15.6.2"
 
 react@^18.2.0:
@@ -1486,6 +1553,14 @@ run-parallel@^1.1.9:
   integrity sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==
   dependencies:
     queue-microtask "^1.2.2"
+
+scheduler@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
+  integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 scheduler@^0.23.0:
   version "0.23.0"

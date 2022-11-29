@@ -2,15 +2,25 @@ import React, { useEffect } from 'react'
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "../../components";
-import { Ecommerce, Orders, Calendar, Employee, Stacked, Pyramid, Customer, Kanban, Area, Bar, Pie, ColorMapping, ColorPicker, Editor } from "../index";
-import remembered, { themeParams } from '../../contexts/remembered'
 import { useStateContext } from '../../contexts/ContextProvider';
+import "primereact/resources/primereact.min.css";                  //core css
+import "primereact/resources/themes/tailwind-light/theme.css";
+import "primeicons/primeicons.css";
 
 const Main = ({ children }) => {
 
-    const { activeMenu, setactiveMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext()
+    const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode, setCurrentColor, setCurrentMode } = useStateContext()
 
-    const { themep, setThemep, setColor, setMode } = themeParams()
+    useEffect(() => {
+        const themode = localStorage.getItem('themeMode');
+        const thecolor = localStorage.getItem('themeColor');
+        if (themode) {
+            setCurrentMode(themode)
+        }
+        if (thecolor) {
+            setCurrentColor(thecolor)
+        }
+    }, []);
 
     return (
         <div className={currentMode === 'Dark' ? 'dark' : ''}>
@@ -27,7 +37,7 @@ const Main = ({ children }) => {
                     </TooltipComponent>
                 </div>
                 {activeMenu ? (
-                    <div className="w-72 fixed z-[1500] sidebar dark:bg-secondary-dark-bg bg-white">
+                    <div className={`w-72 fixed z-[1500] sidebar dark:bg-secondary-dark-bg bg-white`}>
                         <Sidebar/>
                     </div>
                 ) : (
@@ -35,8 +45,8 @@ const Main = ({ children }) => {
                             <Sidebar />
                         </div>
                 )}
-                <div className={`relative dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72' : 'flex-2'}`}>
-                    <div className="sticky top-0 bg-main-bg dark:bg-main-dark-bg navbar ">
+                <div className={`relative dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
+                    <div className="sticky top-0 bg-main-bg dark:bg-main-dark-bg navbar w-full ">
                         <Navbar />
                     </div>
 
