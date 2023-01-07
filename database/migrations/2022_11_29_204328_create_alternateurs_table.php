@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('nom');
             $table->string('type')->nullable();
             $table->string('voltage')->nullable();
-            timestamps();
+            $table->timestamps();
+            $table->foreignId('vehicule_id')->constrained()->cascadeOnDelete();
         });
     }
 

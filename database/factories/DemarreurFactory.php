@@ -17,7 +17,9 @@ class DemarreurFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'numSerie' => fake()->unique()->md5(),
+            'nom' => fake()->words(3,true),
+            'voltage' => fake()->randomElement([6,12,24]),
         ];
     }
 }

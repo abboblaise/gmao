@@ -13,7 +13,7 @@ class UpdateVehiculeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,19 @@ class UpdateVehiculeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'numChassis'=>'required',
+            'immatriculation'=>'required',
+            'alternateur.numSerie' => 'required',
+            'alternateur.nom' => 'required',
+            'batterie.numSerie' => 'required',
+            'batterie.description' => 'required',
+            'moteur.numSerie' => 'required',
+            'injecteur.numSerie' => 'required',
+            'injecteur.description' => 'required',
+            'demarreur.numSerie' => 'required',
+            'demarreur.nom' =>'required',
+            'pompeInjection.numSerie' => 'required',
+            'pompeInjection.nom' => 'required',
         ];
     }
 }

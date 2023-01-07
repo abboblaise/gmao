@@ -6,7 +6,6 @@ use App\Http\Requests\StorebusMakeRequest;
 use App\Http\Requests\UpdatebusMakeRequest;
 use App\Models\BusMake;
 use App\Models\BusModel;
-use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class BusMakeController extends Controller

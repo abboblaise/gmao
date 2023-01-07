@@ -17,7 +17,11 @@ class MoteurFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'numSerie' => fake()->unique()->md5(),
+            'marque' => fake()->randomElement(['Mercedez', 'Mitsubishi','Toyota','Hyunday','Honda','Suzuki','BMW']),
+            'modele' => fake()->randomElement(['V6','V8','V12']),
+            'puissance'=> fake()->randomElement([350,400,500,550]),
+            'couple'=> fake()->randomElement([420,480,530,550,580,600]),
         ];
     }
 }

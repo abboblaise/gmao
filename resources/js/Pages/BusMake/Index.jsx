@@ -1,21 +1,15 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Header} from '../../components';
 import {FilterMatchMode, FilterOperator} from 'primereact/api';
 import {DataTable} from 'primereact/datatable';
 import {Column} from 'primereact/column';
-import {InputText} from 'primereact/inputtext';
-import {Button} from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
 import Splitter from 'm-react-splitters';
 import 'm-react-splitters/lib/splitters.css';
-import { Link } from '@inertiajs/inertia-react'
-import { Inertia } from '@inertiajs/inertia'
-
-
+import {useStateContext} from "../../contexts/ContextProvider";
+import TableHeader from "../../components/TableHeader";
 
 const Index = ({makes}) => {
     const [allMakes, setAllMakes] = useState([]);
-    const [selectedMake, setSelectedMake] = useState(null);
     const [models, setModels] = useState([]);
     const [filters, setFilters] = useState({
         'global': {value: null, matchMode: FilterMatchMode.CONTAINS},
@@ -23,87 +17,28 @@ const Index = ({makes}) => {
     });
     const [globalFilterValue, setGlobalFilterValue] = useState('');
     const [loading, setLoading] = useState(true);
-    const [dialog, setDialog] = useState(false);
-
-    let emptyMake = {
-        name: "undefined",
-        models: undefined,
-    };
-    const [make, setMake] = useState(emptyMake);
-    const [submitted, setSubmitted] = useState(false);
-    const toast = useRef(null);
-
-
+    const {selectedItem, setSelectedItem} = useStateContext()
 
     useEffect(() => {
-        setMake(emptyMake)
         setAllMakes(makes)
         setLoading(false)
 
     }, [])
 
     const handleSelected = (e) => {
-        setSelectedMake(e.value)
+        setSelectedItem(e.value)
         setModels(e.value.models)
-        setMake(e.value)
     }
-
-
-    //  console.log(allMakes)
 
     const onGlobalFilterChange = (e) => {
         const value = e.target.value;
         let _filters = {...filters};
         _filters['global'].value = value;
-
         setFilters(_filters);
         setGlobalFilterValue(value);
     }
-    const renderHeader = () => {
-        return (
-            <div className='flex justify-between items-center'>
-                <div className='flex gap-2'>
-                    {/*<Link href={route('bus-make.create')}>*/}
-                    {/*    <span label="Ajouter" icon="pi pi-plus" className="p-button-succes mr-2 p-button-rounded">Ajouter</span>*/}
-                    {/*</Link>*/}
-                    <Button label="Ajouter" icon="pi pi-plus" className="p-button-succes mr-2 p-button-rounded" onClick={()=>Inertia.get(route('bus-make.create'))} />
-                    <Button icon="pi pi-pencil" className="p-button-rounded p-button-success mr-2" onClick={() => Inertia.get(route('bus-make.edit',selectedMake))} disabled={!selectedMake} />
-                </div>
-                <div className='text-semibold text-lg'>
-                    <span className='p-input-icon-left'>
-                      <i className='pi pi-search'/>
-                      <InputText value={globalFilterValue} onChange={onGlobalFilterChange}
-                                 placeholder="Keyword Search"/>
-                  </span>
-                </div>
-            </div>
-        )
-    }
 
-    const openNew = () => {
-        setMake(emptyMake)
-        setDialog(true)
-        console.log(make)
-    }
-
-    const hideDialog = () => {
-        setSubmitted(false);
-        setDialog(false);
-    }
-
-    const onSubmit = e => {
-
-        e.preventDefault();
-        console.log(data);
-        reset();
-    }
-
-    const editMake = () => {
-        setDialog(true);
-        console.log(make)
-    }
-
-    const header = renderHeader();
+    const header = <TableHeader baseRoute="bus-make" globalFilterValue={globalFilterValue} onChangeFunction={onGlobalFilterChange}/>
 
     return (
         <div className='m-2 md:m-10 mt-24 p-2 md:p10 bg-white rounded-3xl'>
@@ -120,7 +55,7 @@ const Index = ({makes}) => {
                                rows={10}
                                paginatorTemplate='FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowPerPageDropdown'
                                rowsPerPageOptions={[5, 10, 25, 50]} dataKey='id' rowHover selectionMode="single"
-                               selection={selectedMake} onSelectionChange={handleSelected}
+                               selection={selectedItem} onSelectionChange={handleSelected}
                                filters={filters} filterDelay='menu' loading={loading} responsiveLayout='scroll'
                                globalFilterFields={['name']} emptyMessage="Aucune donnée à afficher"
                                currentPageReportTemplate="{first} à {last} sur {totalRecords}">

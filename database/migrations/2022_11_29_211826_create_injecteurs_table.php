@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('tarage')->nullable();
             $table->timestamps();
+            $table->foreignId('vehicule_id')->constrained()->cascadeOnDelete();
         });
     }
 

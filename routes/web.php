@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BusMakeController;
+use App\Http\Controllers\VehiculeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,8 @@ Route::get('/', [\App\Http\Controllers\HomeController::class,"ecommerce"])->name
 //Params
 Route::resources([
     'bus-make' => BusMakeController::class,
+    'vehicule' => VehiculeController::class,
 ]);
-//Route::get('/bus-make', [\App\Http\Controllers\BusMakeController::class,"index"])->name("make.index");
-Route::get('/bus', [\App\Http\Controllers\HomeController::class,"bus"])->name("bus.index");
 Route::get('/speciality', [\App\Http\Controllers\HomeController::class,"specialities"])->name("speciality.index");
 Route::get('/technician', [\App\Http\Controllers\HomeController::class,"technicians"])->name("technician.index");
 Route::get('/driver', [\App\Http\Controllers\HomeController::class,"budDrivers"])->name("driver.index");

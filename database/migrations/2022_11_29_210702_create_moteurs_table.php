@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('puissance')->nullable();
             $table->integer('couple')->nullable();
             $table->timestamps();
+            $table->foreignId('vehicule_id')->constrained()->cascadeOnDelete();
         });
     }
 

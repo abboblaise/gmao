@@ -17,7 +17,10 @@ class VehiculeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'numChassis'=> fake()->unique()->md5(),
+            'immatriculation'=> fake()->randomElement(['CE','LT'])
+                .'-'.fake()->unique()->numerify().'-'.fake()->regexify('[A-Z]{2}'),
+            'nombrePlaces' => fake()->randomElement([55,70],)
         ];
     }
 }

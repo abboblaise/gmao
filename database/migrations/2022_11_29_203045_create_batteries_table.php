@@ -20,7 +20,8 @@ return new class extends Migration
             $table->integer('tension')->nullable();
             $table->float('intensite')->nullable();
             $table->float('puissance')->nullable();
-            timestamps();
+            $table->timestamps();;
+            $table->foreignId('vehicule_id')->constrained()->cascadeOnDelete();
         });
     }
 

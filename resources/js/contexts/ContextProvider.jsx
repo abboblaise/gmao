@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
 const StateContext = createContext()
-const BusMakeContext = createContext();
 
 const initialState = {
     chat: false,
@@ -18,8 +17,8 @@ export const ContextProvider = ({ children }) => {
     const [currentMode, setCurrentMode] = useState('Light')
     const [themeSettings, setThemeSettings] = useState(false)
     const [dialog, setDialog] = useState(false);
-
-    const [make, setMake] = useState(undefined);
+    const [itemSelected, setItemSelected] = useState(false)
+    const [selectedItem, setSelectedItem] = useState(null);
 
     const handleClick = (clicked) => {
         setisClicked({...initialState, [clicked]:true})
@@ -54,6 +53,8 @@ export const ContextProvider = ({ children }) => {
                 handleClick,
                 handleReset,
                 dialog, setDialog,
+                itemSelected, setItemSelected,
+                selectedItem, setSelectedItem,
             }}
         >
             {children}
@@ -62,4 +63,3 @@ export const ContextProvider = ({ children }) => {
 }
 
 export const useStateContext = () => useContext(StateContext)
-export const useBusMakeContext = () => useContext(BusMakeContext)

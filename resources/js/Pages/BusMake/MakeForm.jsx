@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Header} from '../../components'
 import { InputText } from 'primereact/inputtext';
 import { Chips } from 'primereact/chips';
@@ -54,9 +54,12 @@ function MakeForm({pageParams, errors}) {
                             </span>
                         {getFormErrorMessage('models')}
                     </div>
-                    <div className="flex justify-end items-end mb-4 mt-4 w-1/2 absolute right-0 gap-2">
-                        <Button type="submit" label="Valider" className=" p-button-primary" icon="pi pi-check" iconPos="right" />
-                        <Button type="button" label="Annuler" className=" p-button-warning" icon="pi pi-times" iconPos="right" />
+                    <div className="flex justify-between mt-4">
+                        <div></div>
+                        <div className="flex items-end gap-4">
+                            <Button type="submit" label="Valider" className=" p-button-primary" icon="pi pi-check" iconPos="right" />
+                            <Button type="button" onClick={() => Inertia.get(route("bus-make.index"))} label="Annuler" className=" p-button-warning" icon="pi pi-times" iconPos="right" />
+                        </div>
                     </div>
                 </form>
             </div>

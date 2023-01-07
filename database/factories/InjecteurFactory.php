@@ -17,7 +17,9 @@ class InjecteurFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'numSerie' => fake()->unique()->md5(),
+            'description' => fake()->words(3,true),
+
         ];
     }
 }

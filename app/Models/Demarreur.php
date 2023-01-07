@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Demarreur extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    public function vehicule(){
+        return $this->belongsTo(Vehicule::class);
+    }
 }

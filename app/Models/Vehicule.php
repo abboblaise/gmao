@@ -9,6 +9,8 @@ class Vehicule extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function moteur()
     {
         return $this->hasOne(Moteur::class);
@@ -25,11 +27,11 @@ class Vehicule extends Model
     {
         return $this->hasOne(Injecteur::class);
     }
-    public function alternateur()
+    public function alternateur(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Alternateur::class);
     }
-    public function PompeInjection()
+    public function pompeInjection(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(PompeInjection::class);
     }
